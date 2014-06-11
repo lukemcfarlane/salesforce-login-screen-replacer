@@ -1,0 +1,15 @@
+{
+	"manifest_version": 2,
+	"name": "Salesforce Login Screen Helper",
+	"version": "1.0",
+	"description": "Defaults to new identity",
+	"permissions": [
+		"tabs",
+		"https://code.jquery.com/jquery-2.1.1.min.js"
+	],
+	"content_scripts": [{
+		"matches": ["https://test.salesforce.com/*"],
+		"js": ["jquery-2.1.1.min.js", "contentScript.js"],
+		"run_at": "document_end"
+	}]
+}
