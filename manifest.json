@@ -4,8 +4,7 @@
 	"version": "1.0",
 	"description": "Defaults to new identity",
 	"permissions": [
-		"tabs",
-		"https://code.jquery.com/jquery-2.1.1.min.js"
+		"tabs"
 	],
 	"content_scripts": [{
 		// "matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
