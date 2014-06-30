@@ -7,8 +7,7 @@
 		"tabs"
 	],
 	"content_scripts": [{
-		// "matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
-		"matches": ["https://test.salesforce.com/*"],
+		"matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
 		"js": ["jquery-2.1.1.min.js", "contentScript.js"],
 		"run_at": "document_end"
 	}]

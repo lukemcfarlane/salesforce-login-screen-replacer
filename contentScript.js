@@ -1,5 +1,12 @@
+var hostnameEndpoints = {
+  'test.salesforce.com' : 'https://test.salesforce.com/',
+  'login.salesforce.com' : 'https://login.salesforce.com/'
+};
+
+var endpoint = hostnameEndpoints[window.location.hostname];
+
 var newContentStr = '<body>' +
-	'        <form action="https://test.salesforce.com/" name="login" method="post">' +
+	'        <form action="' + endpoint + '" name="login" method="post">' +
 	'            <div>' +
 	'                <label for="un">Username:</label>' +
 	'                <input type="email" id="username" name="un"/>' +
