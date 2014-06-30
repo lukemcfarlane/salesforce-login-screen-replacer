@@ -5,7 +5,7 @@ var hostnameEndpoints = {
 
 var endpoint = hostnameEndpoints[window.location.hostname];
 
-var newContentStr = '<body>' +
+var newContentStr = '<body style="display: block !important">' + //display reverses hide_at_start.css
 	'        <form action="' + endpoint + '" name="login" method="post">' +
 	'            <div>' +
 	'                <label for="un">Username:</label>' +
@@ -19,4 +19,4 @@ var newContentStr = '<body>' +
 	'        </form>' +
 	'    </body>';
 
-$('html body').replaceWith(newContentStr);
+$('html').html(newContentStr);

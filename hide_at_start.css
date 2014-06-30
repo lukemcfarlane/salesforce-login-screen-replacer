@@ -1,0 +1,4 @@
+/*This file hides body on doc load, to avoid flashing the Salesforce page before we replace it*/
+body {
+    display: none !important;
+};
