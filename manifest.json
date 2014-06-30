@@ -4,13 +4,19 @@
 	"version": "1.0",
 	"description": "Defaults to new identity",
 	"permissions": [
-		"tabs",
-		"https://code.jquery.com/jquery-2.1.1.min.js"
+		"tabs"
 	],
-	"content_scripts": [{
-		// "matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
-		"matches": ["https://test.salesforce.com/*"],
-		"js": ["jquery-2.1.1.min.js", "contentScript.js"],
-		"run_at": "document_end"
-	}]
+	"content_scripts": [
+    {
+      //Hide the body at the start to avoid flashes of salesforce login page before we replace it
+      "matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
+      "css": ["hide_at_start.css"],
+      "run_at": "document_start"
+    },
+    {
+  		"matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
+  		"js": ["jquery-2.1.1.min.js", "contentScript.js"],
+  		"run_at": "document_end"
+  	}
+  ]
 }
