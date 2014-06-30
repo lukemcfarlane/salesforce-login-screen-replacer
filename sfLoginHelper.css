@@ -1,0 +1,10 @@
+#mainForm {
+    width: 400px;
+    height:200px;
+    /*border: 1px solid Black;*/
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    margin-left:-200px;
+    margin-top:-75px;   
+}
