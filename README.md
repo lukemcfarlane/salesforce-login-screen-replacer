@@ -1,7 +1,7 @@
 Salesforce Login Screen Helper
 ==============================
 
-![ScreenShot](https://raw.github.com/lukemcfarlane/salesforceloginhelperchromeextension/blob/master/screenshots/login-screen.png)
+![Screenshot](https://raw.githubusercontent.com/lukemcfarlane/salesforceloginhelperchromeextension/master/screenshots/login-page.png)
 
 What
 ----
