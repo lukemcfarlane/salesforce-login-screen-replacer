@@ -9,7 +9,7 @@ Replaces the Salesforce login page with an alternative page that is more simple 
 Why
 ---
 
-Recent updates to the Salesforce login page cause compatibility issues with password managers such as 1Password, causing autofill to fail. Whilst this solution doesn't have all the bells and whistles of the standard login page, it is a clean and simple solution that plays nicely with these apps.
+Recent updates to the Salesforce login page cause compatibility issues with password managers such as 1Password, causing autofill to fail. Whilst this solution doesn't have all the bells and whistles of the standard login page, it is a clean and simple solution that plays nicely when using autofill.
 
 But wait...
 -----------
