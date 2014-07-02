@@ -1,12 +1,12 @@
-Salesforce Login Screen Helper
-==============================
+Salesforce Login Screen Replacer
+================================
 
 ![Screenshot](https://raw.githubusercontent.com/lukemcfarlane/salesforceloginhelperchromeextension/master/screenshots/login-page.png)
 
 What
 ----
 
-Replaces the Salesforce login page with an alternative page that is more simple and reliable.
+Chrome extension that replaces the Salesforce login page with an alternative page that is more simple and reliable.
 
 Why
 ---
