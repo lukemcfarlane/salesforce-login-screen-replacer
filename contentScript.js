@@ -11,7 +11,7 @@ var endpoint = hostnameEndpoints[window.location.hostname];
 var targetName = hostnameTargetNames[window.location.hostname];
 
 var newContentStr = '<body style="display: block !important">' + //display reverses hide_at_start.css
-'        <form id="mainForm" action="' + endpoint + '" name="login" method="post">' +
+	'        <form id="mainForm" action="' + endpoint + '" name="login" method="post">' +
 	'            <img src="' + chrome.extension.getURL('trineo-logo.png') + '"/> ' +
 	'            <h2>Salesforce Login: ' + targetName + '</h2>' +
 	'            <div>' +
@@ -23,7 +23,18 @@ var newContentStr = '<body style="display: block !important">' + //display rever
 	'                <input type="password" id="password" name="pw" class="smooth"/>' +
 	'            </div>' +
 	'            <button type="submit" class="smooth btn-small" style="background-color: DimGray; text-align: right;">Log in</button>' +
+	'            <span class="error"></span>' +
 	'        </form>' +
 	'    </body>';
 
 $('html').html(newContentStr);
+
+$("#mainForm").ajaxForm({
+	success: function(response, status) {
+		var responseParsed = $.parseHTML(response);
+		var errorMsg = $(responseParsed).find('#error').text();
+		if (typeof errorMsg !== undefined && errorMsg != '') {
+			$('.error').text(errorMsg);
+		}
+	}
+});

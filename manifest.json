@@ -14,7 +14,7 @@
 	}, {
 		"matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
 		"css": ["minfwk.css", "sfLoginHelper.css"],
-		"js": ["jquery-2.1.1.min.js", "contentScript.js"],
+		"js": ["jquery-2.1.1.min.js", "jquery.form.min.js", "contentScript.js"],
 		"run_at": "document_end"
 	}],
 	"web_accessible_resources": ["trineo-logo.png"],
