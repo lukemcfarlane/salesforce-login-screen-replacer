@@ -1,3 +1,28 @@
+// Get URL Parameters
+var url = document.location.href;
+ 
+// if url ends with '#', trim
+if(url.lastIndexOf('#') == url.length - 1) {
+    url = url.substr(0, 91); 
+}
+ 
+var i = url.indexOf('?');
+url = url.substr(i+1, url.length);
+var tokens = url.split('&');
+var params = {};
+var numParams = 0;
+for(var j = 0; j < tokens.length; j++) {
+    var token = tokens[j];
+    var keyVal = token.split('=');
+    var param = {
+        key: keyVal[0],
+        val: keyVal[1]
+    };
+    params[keyVal[0]] = keyVal[1];
+    numParams++;
+}
+
+
 var hostnameEndpoints = {
 	'test.salesforce.com': 'https://test.salesforce.com/',
 	'login.salesforce.com': 'https://login.salesforce.com/'
@@ -23,7 +48,21 @@ var newContentStr = '<body style="display: block !important">' + //display rever
 	'                <input type="password" id="password" name="pw" class="smooth"/>' +
 	'            </div>' +
 	'            <button type="submit" class="smooth btn-small" style="background-color: DimGray; text-align: right;">Log in</button>' +
+    '            <a style="display: block; margin-top: 10px;" href="javascript:void(0)" id="revert-link">Go back to standard login page</a>' +
 	'        </form>' +
 	'    </body>';
 
-$('html').html(newContentStr);
+
+if(params.replacePage !== 'false') {
+    $('html').html(newContentStr);
+} else {
+    $(document).ready(function() {
+        $('body').attr('style', 'display: block !important')
+    });
+}
+
+$('#revert-link').click(function() {
+    var hasParams = location.search !== '' ;
+    location.href += (hasParams ? '&' : '?') + 
+                    'replacePage=false';
+});
