@@ -23,16 +23,12 @@ for(var j = 0; j < tokens.length; j++) {
 }
 
 
-var hostnameEndpoints = {
-	'test.salesforce.com': 'https://test.salesforce.com/',
-	'login.salesforce.com': 'https://login.salesforce.com/'
-};
 var hostnameTargetNames = {
 	'test.salesforce.com': 'Sandbox',
 	'login.salesforce.com': 'Production'
 };
 
-var endpoint = hostnameEndpoints[window.location.hostname];
+var endpoint = window.location.href;
 var targetName = hostnameTargetNames[window.location.hostname];
 
 var newContentStr = '<body style="display: block !important">' + //display reverses hide_at_start.css
