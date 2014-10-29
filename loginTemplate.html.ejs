@@ -1,0 +1,16 @@
+<body style="display: block !important">
+    <form id="mainForm" action="<%= endpoint %>" name="login" method="post">
+        <img src="<%= logoUrl %>"/>
+        <h2>Salesforce Login: <%= targetName %></h2>
+        <div>
+            <label for="un" class="smooth">Username:</label>
+            <input type="email" id="username" name="un" class="smooth"/>
+        </div>
+        <div>
+            <label for="pw" class="smooth">Password:</label>
+            <input type="password" id="password" name="pw" class="smooth"/>
+        </div>
+        <button type="submit" class="smooth btn-small" style="background-color: DimGray; text-align: right;">Log in</button>
+        <a style="display: block; margin-top: 10px;" href="javascript:void(0)" id="revert-link">Go back to standard login page</a>
+    </form>
+</body>

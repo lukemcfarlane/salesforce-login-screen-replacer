@@ -14,10 +14,10 @@
 	}, {
 		"matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
 		"css": ["minfwk.css", "sfLoginHelper.css"],
-		"js": ["jquery-2.1.1.min.js", "contentScript.js"],
+		"js": ["jquery-2.1.1.min.js", "ejs_production.js", "contentScript.js"],
 		"run_at": "document_end"
 	}],
-	"web_accessible_resources": ["sf-logo.png"],
+	"web_accessible_resources": ["sf-logo.png", "loginTemplate.html.ejs"],
 	"icons": {
 		"16": "icon.png",
 		"48": "icon.png",

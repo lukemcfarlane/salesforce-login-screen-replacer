@@ -31,34 +31,28 @@ var hostnameTargetNames = {
 var endpoint = window.location.href;
 var targetName = hostnameTargetNames[window.location.hostname];
 
-var newContentStr = '<body style="display: block !important">' + //display reverses hide_at_start.css
-'        <form id="mainForm" action="' + endpoint + '" name="login" method="post">' +
-	'            <img src="' + chrome.extension.getURL('sf-logo.png') + '"/> ' +
-	'            <h2>Salesforce Login: ' + targetName + '</h2>' +
-	'            <div>' +
-	'                <label for="un" class="smooth">Username:</label>' +
-	'                <input type="email" id="username" name="un" class="smooth"/>' +
-	'            </div>' +
-	'            <div>' +
-	'                <label for="pw" class="smooth">Password:</label>' +
-	'                <input type="password" id="password" name="pw" class="smooth"/>' +
-	'            </div>' +
-	'            <button type="submit" class="smooth btn-small" style="background-color: DimGray; text-align: right;">Log in</button>' +
-    '            <a style="display: block; margin-top: 10px;" href="javascript:void(0)" id="revert-link">Go back to standard login page</a>' +
-	'        </form>' +
-	'    </body>';
+var html = new EJS({
+    url: chrome.extension.getURL('loginTemplate.html')
+}).render({
+    endpoint: endpoint,
+    targetName: targetName,
+    logoUrl: chrome.extension.getURL('sf-logo.png')
+});
 
+replaceHTMLContent(html);
 
-if(params.replacePage !== 'false') {
-    $('html').html(newContentStr);
-} else {
-    $(document).ready(function() {
-        $('body').attr('style', 'display: block !important')
+function replaceHTMLContent(newContentStr) {
+    if(params.replacePage !== 'false') {
+        $('html').html(newContentStr);
+    } else {
+        $(document).ready(function() {
+            $('body').attr('style', 'display: block !important')
+        });
+    }
+
+    $('#revert-link').click(function() {
+        var hasParams = location.search !== '' ;
+        location.href += (hasParams ? '&' : '?') + 
+                        'replacePage=false';
     });
 }
-
-$('#revert-link').click(function() {
-    var hasParams = location.search !== '' ;
-    location.href += (hasParams ? '&' : '?') + 
-                    'replacePage=false';
-});
