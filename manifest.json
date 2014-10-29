@@ -17,7 +17,7 @@
 		"js": ["jquery-2.1.1.min.js", "contentScript.js"],
 		"run_at": "document_end"
 	}],
-	"web_accessible_resources": ["trineo-logo.png"],
+	"web_accessible_resources": ["sf-logo.png"],
 	"icons": {
 		"16": "icon.png",
 		"48": "icon.png",
