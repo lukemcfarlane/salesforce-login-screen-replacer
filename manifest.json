@@ -9,18 +9,18 @@
 	"content_scripts": [{
 		//Hide the body at the start to avoid flashes of salesforce login page before we replace it
 		"matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
-		"css": ["hide_at_start.css"],
+		"css": ["css/hide_at_start.css"],
 		"run_at": "document_start"
 	}, {
 		"matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
-		"css": ["minfwk.css", "sfLoginHelper.css"],
-		"js": ["jquery-2.1.1.min.js", "ejs_production.js", "contentScript.js"],
+		"css": ["css/minfwk.css" ],
+		"js": ["lib/jquery-2.1.1.min.js", "lib/ejs_production.js", "js/contentScript.js"],
 		"run_at": "document_end"
 	}],
-	"web_accessible_resources": ["sf-logo.png", "loginTemplate.html.ejs"],
+	"web_accessible_resources": ["images/sf-logo.png", "loginTemplate.html.ejs"],
 	"icons": {
-		"16": "icon.png",
-		"48": "icon.png",
-		"128": "icon.png"
+		"16": "images/icon.png",
+		"48": "images/icon.png",
+		"128": "images/icon.png"
 	}
 }

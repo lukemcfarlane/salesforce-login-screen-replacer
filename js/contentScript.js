@@ -36,7 +36,7 @@ var html = new EJS({
 }).render({
     endpoint: endpoint,
     targetName: targetName,
-    logoUrl: chrome.extension.getURL('sf-logo.png')
+    logoUrl: chrome.extension.getURL('images/sf-logo.png')
 });
 
 replaceHTMLContent(html);
