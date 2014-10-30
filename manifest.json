@@ -13,11 +13,11 @@
 		"run_at": "document_start"
 	}, {
 		"matches": ["https://test.salesforce.com/*", "https://login.salesforce.com/*"],
-		"css": ["css/minfwk.css" ],
+		"css": [ "css/bootstrap.min.css", "css/sfLoginHelper.css" ],
 		"js": ["lib/jquery-2.1.1.min.js", "lib/ejs_production.js", "js/contentScript.js"],
 		"run_at": "document_end"
 	}],
-	"web_accessible_resources": ["images/sf-logo.png", "loginTemplate.html.ejs"],
+	"web_accessible_resources": ["images/sf-logo.png", "loginTemplate.html.ejs", "css/Montserrat-Regular.woff2"],
 	"icons": {
 		"16": "images/icon.png",
 		"48": "images/icon.png",
