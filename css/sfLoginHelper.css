@@ -1,0 +1,17 @@
+small {
+    color: rgb(118, 114, 114) !important;
+}
+
+label, button {
+    font-family: 'Gill Sans', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+div.container {
+    width: 400px !important;
+    margin-top: 50px;
+}
+
+img.logo {
+    margin-left: 10px;
+}

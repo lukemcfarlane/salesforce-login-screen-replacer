@@ -1,7 +1,7 @@
 Salesforce Login Screen Replacer
 ================================
 
-![Screenshot](https://raw.githubusercontent.com/lukemcfarlane/salesforceloginhelperchromeextension/master/screenshots/login-page.png)
+![Screenshot](https://raw.githubusercontent.com/lukemcfarlane/salesforceloginhelperchromeextension/master/images/login-page.png)
 
 What
 ----
